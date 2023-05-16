@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Sign up | Calendar {% endblock %}
+{% block header %} Welcome to Calendar! {% endblock %}
+{% block content %}
+<form method="POST">
+    <h3 align="center">Sign up</h3>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            placeholder="Enter email"
+            value="{{ request.form['email'] }}"
+        />
+    </div>
+    <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input
+            type="text"
+            class="form-control"
+            name="first_name"
+            id="first_name"
+            placeholder="Enter first name"
+            value="{{ request.form['first_name'] }}"
+        />
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input
+            type="password"
+            class="form-control"
+            name="password"
+            id="password"
+            placeholder="Enter password (8+ characters)"
+        />
+    </div>
+    <br>
+    <button type="submit" class="w-100 btn btn-primary">Submit</button>
+</form>
+{% endblock %}
